@@ -91,7 +91,6 @@ gimp_gegl_apply_cached_operation (GeglBuffer          *src_buffer,
                                   gint                 n_valid_rects,
                                   gboolean             cancelable)
 {
-  g_print ("why do you do this to me\n");
   GeglNode          *gegl;
   GeglNode          *effect;
   GeglNode          *dest_node;

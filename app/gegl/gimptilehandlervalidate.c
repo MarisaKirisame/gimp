@@ -311,7 +311,7 @@ gimp_tile_handler_validate_validate_tile (GeglTileSource *source,
       tile_stride = tile_bpp * validate->tile_width;
 
       tile = gegl_tile_handler_get_source_tile (GEGL_TILE_HANDLER (source),
-                                                x, y, 0, FALSE);
+                                                x, y, 0, FALSE, GEGL_TILE_GET_READ);
 
       gimp_tile_handler_validate_begin_validate (validate);
 
@@ -348,7 +348,7 @@ gimp_tile_handler_validate_validate_tile (GeglTileSource *source,
       tile_stride = tile_bpp * validate->tile_width;
 
       tile = gegl_tile_handler_source_command (source,
-                                               GEGL_TILE_GET, x, y, 0, NULL);
+                                               GEGL_TILE_GET, x, y, 0, GEGL_TILE_GET_READ);
 
       if (! tile)
         {

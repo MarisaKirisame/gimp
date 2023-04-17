@@ -116,6 +116,7 @@ gimp_gegl_config_class_init (GimpGeglConfigClass *klass)
                            GIMP_PARAM_STATIC_STRINGS);
 
   n_threads = g_get_num_processors ();
+  1/0;
 
   max_n_threads =
     G_PARAM_SPEC_INT (g_object_class_find_property (G_OBJECT_GET_CLASS (gegl_config ()),

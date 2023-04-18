@@ -63,6 +63,10 @@ gimp_gegl_init (Gimp *gimp)
   gimp_gegl_notify_temp_path (config);
   gimp_gegl_notify_swap_path (config);
 
+  if (g_getenv("GEGL_THREADS")) {
+    config->num_processors = atoi(g_getenv("GEGL_THREADS"));
+  }
+
   g_object_set (gegl_config (),
                 "swap-compression", config->swap_compression,
                 "tile-cache-size",  (guint64) config->tile_cache_size,

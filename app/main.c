@@ -635,11 +635,8 @@ main (int    argc,
                  _("Another GIMP instance is already running."));
 
       if (batch_commands) {
-        g_print ("%d\n", _gegl_threads);
-        g_print ("%d\n", _gegl_threads);
-        g_print ("%d\n", _gegl_threads);
-        g_print ("%d\n", _gegl_threads);
-        g_print ("%d\n", _gegl_threads);
+        raise(SIGINT);
+
         gimp_unique_batch_run (batch_interpreter, batch_commands);
       }
 

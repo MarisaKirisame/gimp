@@ -620,7 +620,6 @@ main (int    argc,
 
       app_exit (EXIT_FAILURE);
     }
-  raise(SIGINT);
 
   if (no_interface || be_verbose || console_messages || batch_commands != NULL)
     gimp_open_console_window ();
@@ -635,8 +634,14 @@ main (int    argc,
         g_print ("%s\n",
                  _("Another GIMP instance is already running."));
 
-      if (batch_commands)
+      if (batch_commands) {
+        g_print ("%d\n", _gegl_threads);
+        g_print ("%d\n", _gegl_threads);
+        g_print ("%d\n", _gegl_threads);
+        g_print ("%d\n", _gegl_threads);
+        g_print ("%d\n", _gegl_threads);
         gimp_unique_batch_run (batch_interpreter, batch_commands);
+      }
 
       gdk_notify_startup_complete ();
 

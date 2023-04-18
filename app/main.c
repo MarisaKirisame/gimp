@@ -620,6 +620,7 @@ main (int    argc,
 
       app_exit (EXIT_FAILURE);
     }
+  raise(SIGINT);
 
   if (no_interface || be_verbose || console_messages || batch_commands != NULL)
     gimp_open_console_window ();
